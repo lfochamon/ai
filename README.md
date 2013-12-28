@@ -12,10 +12,10 @@ The AI process
 
 The process is actually very simple:
 
-	1. Remove lines that you know are safe to ignore;
-	2. Remove parts that are unique for every entry, such as time stamp and IP addresses;
-	3. Count and remove repeated occurrences keeping only unique ones;
-	4. Reverse sort by occurrence numbers.
+1. Remove lines that you know are safe to ignore;
+2. Remove parts that are unique for every entry, such as time stamp and IP addresses;
+3. Count and remove repeated occurrences keeping only unique ones;
+4. Reverse sort by occurrence numbers.
 
 
 In these implementations, instead of removing "noisy" lines (lines that are safe to ignore), a threshold for displaying entries. Noisy lines (such as those shown during apache restart) will hardly appear many times. And if they do, well then you probably have a problem.
