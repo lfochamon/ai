@@ -50,3 +50,16 @@ cat /path/to/logs/msmtp.log | /path/to/script/ai_msmtp.py 2>&1 | msmtp email@hos
 
 You can set up a cron job for it, but be careful with log rotation.
 
+
+Issues
+------
+
+Issues/suggestions should be report via the GitHub repository:
+
+https://github.com/lchamon/ai
+
+
+Author
+------
+
+Chamon [luizchamon] [gmail]
