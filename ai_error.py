@@ -2,6 +2,13 @@
 
 import fileinput, re, collections
 
+
+# Set how many unique apache errors will be displayed
+APACHE_ERROR_SIZE = 30
+# Set how many unique IP addresses will be displayed
+IP_LIST_SIZE = 20
+
+
 # Output email header
 print "From: cloud@lps.usp.br"
 print "To: cloud@lps.usp.br"
@@ -52,14 +59,12 @@ ipCount = collections.Counter(ipList)
 # Output in reverse occurence order
 print ''
 print '---apache error---'
-for i in errorCount.most_common():
-	if i[1] > 100:
-		print str(i[1]) + '\t\t' + i[0].strip()
+for i in errorCount.most_common( APACHE_ERROR_SIZE ):
+	print str(i[1]) + '\t\t' + i[0].strip()
 print '---end of apache error---'
 
 print ''
 print '---IP listing---'
-for i in ipCount.most_common():
-	if i[1] > 100:
-		print str(i[1]) + '\t\t' + i[0].strip()
+for i in ipCount.most_common( IP_LIST_SIZE ):
+	print str(i[1]) + '\t\t' + i[0].strip()
 print '---end of IP listing---'

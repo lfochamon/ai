@@ -18,7 +18,7 @@ for line in fileinput.input():
     # Strip blank spaces
 	line = line.strip()
 	
-	# Count IP occurence
+	# Count IP occurrence
 	recipient = re.search(r'recipients=([^\s]*)', line)
 	if recipient:
 		toList.append(recipient.group(1))
@@ -37,7 +37,7 @@ toCount = collections.Counter(toList)
 dateCount = collections.Counter(dateList)
 
 
-# Output in reverse occurence order
+# Output in reverse occurrence order
 print ''
 print '---recipient list---'
 for i in toCount.most_common():
