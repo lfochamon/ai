@@ -40,7 +40,7 @@ for line in fileinput.input():
 		id = re.search(r'(\[id \"\d*\"\])', line)
 		tag = re.search(r'(\[tag [^]]*\])', line)
 		msg = re.search(r'(\[msg [^]]*\])', line)
-		url = re.search(r'\[hostname ([^]]*)\] \[uri ([^]]*)\]', line)
+		url = re.search(r'\[hostname "([^]]*)"\] \[uri "([^]]*)"\]', line)
 		if id and tag and url:
 			line = '[ModSecurity] ' + id.group(1) + ' ' + tag.group(1) + ' [URI ' + url.group(1)  + url.group(2) + ']'
 		elif id and msg and url:
